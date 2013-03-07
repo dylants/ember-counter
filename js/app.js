@@ -1,0 +1,1 @@
+window.CounterApp = Ember.Application.create();
