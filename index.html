@@ -6,19 +6,22 @@
 	<title>Ember.js Counters</title>
 </head>
 <body>
-	<div id="counterapp">
-		<p>
-			Ember.js Counters
-			<button id="add_counter">Add Counter</button>
-		</p>
-		<div id="counters"></div>
-	</div>
-	<script type="text/x-handlebars" data-template-name="counter">
-		<div class="counter">
-			counter value: {{count}}
-			<button class='increment'>+</button>
-			<button class='decrement'>-</button>
-			<button class="remove_counter">Remove Counter</button>
+	<script type="text/x-handlebars" data-template-name="counters">
+		<div id="counterapp">
+			<p>
+				Ember.js Counters
+				<button {{action "createCounter"}}>Add Counter</button>
+			</p>
+			<div id="counters">
+				{{#each model itemController="counter"}}
+					<div class="counter">
+						counter value: {{count}}
+						<button {{action "increment"}}>+</button>
+						<button {{action "decrement"}}>-</button>
+						<button {{action "removeCounter"}}>Remove Counter</button>
+					</div>
+				{{/each}}
+			</div>
 		</div>
 	</script>
 	<script src="//code.jquery.com/jquery-1.9.1.js"></script>
@@ -30,5 +33,7 @@
 	<script src="js/router.js"></script>
 	<script src="js/models/counter.js"></script>
 	<script src="js/models/store.js"></script>
+	<script src="js/controllers/counters_controller.js"></script>
+	<script src="js/controllers/counter_controller.js"></script>
 </body>
 </html>
