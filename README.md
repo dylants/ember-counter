@@ -21,6 +21,9 @@ loads all the counters and supplies them as the model.  The counters view is loa
 and uses the CountersController to process all counters, and the CounterController for each individual counter.  The
 Counter model represents a single counter, and is backed by the ember-data store.
 
+More information on the details of the application can be found here:  
+http://blog.dylants.com/2013/03/27/ember-counter/
+
 ## Getting Started ##
 
 A running version of this application is hosted on GitHub here:  
